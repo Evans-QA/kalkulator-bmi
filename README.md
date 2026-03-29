@@ -1,37 +1,61 @@
-📊 Projekt 1: Kalkulator BMI (Java Swing)
+# 📊 Projekt 1: Kalkulator BMI (Java Swing)
+
 Aplikacja okienkowa napisana w języku Java, służąca do obliczania wskaźnika masy ciała (BMI). Projekt został stworzony w celu demonstracji zasad programowania obiektowego (OOP) oraz obsługi błędów w interfejsie graficznym.
 
-🛠️ Charakterystyka Techniczna
-Język programowania: Java (wersja 21+)
-Interfejs użytkownika: Okienkowy (GUI - biblioteka Swing)
-Środowisko programistyczne: IntelliJ IDEA
-System budowania: IntelliJ / Maven
-Wykorzystane elementy obiektowości:
-Klasy i Metody: Logika matematyczna została wydzielona do osobnej klasy BmiKalkulator, co pozwala na separację logiki od widoku (zasada Single Responsibility).
-Konstruktory: Wykorzystane do inicjalizacji obiektu obliczeniowego danymi użytkownika.
-Hermetyzacja: Pola klasy są prywatne (private), dostęp do nich odbywa się przez kontrolowane metody.
-Metody: oblicz() (logika matematyczna) oraz interpretuj() (logika warunkowa).
-📝 Opis Działania
+---
+
+## 🛠️ Charakterystyka Techniczna
+
+*   **Język programowania:** Java (wersja 21+)
+*   **Interfejs użytkownika:** Okienkowy (GUI - biblioteka **Swing**)
+*   **Środowisko programistyczne:** IntelliJ IDEA
+*   **System budowania:** IntelliJ / Maven
+
+### Wykorzystane elementy obiektowości:
+1.  **Klasy i Metody:** Logika matematyczna została wydzielona do osobnej klasy `BmiKalkulator`, co pozwala na separację logiki od widoku (zasada Single Responsibility).
+2.  **Konstruktory:** Wykorzystane do inicjalizacji obiektu obliczeniowego danymi użytkownika.
+3.  **Hermetyzacja:** Pola klasy są prywatne (`private`), dostęp do nich odbywa się przez kontrolowane metody.
+4.  **Metody:** `oblicz()` (logika matematyczna) oraz `interpretuj()` (logika warunkowa).
+
+---
+
+## 📝 Opis Działania
+
 Program pobiera od użytkownika dwie wartości zmiennoprzecinkowe:
+- **Waga** (w kilogramach)
+- **Wzrost** (w metrach, np. 1.85)
 
-Waga (w kilogramach)
-Wzrost (w metrach, np. 1.85)
-Po kliknięciu przycisku Oblicz BMI, aplikacja przetwarza dane zgodnie z algorytmem: BMI = waga / (wzrost * wzrost)
+Po kliknięciu przycisku **Oblicz BMI**, aplikacja przetwarza dane zgodnie z algorytmem:
+`BMI = waga / (wzrost * wzrost)`
 
-Dane wyjściowe:
-Liczbowy współczynnik BMI (formatowany do 2 miejsc po przecinku).
-Słowna interpretacja (Niedowaga, Waga prawidłowa, Nadwaga, Otyłość).
-🛡️ Obsługa Błędów
+### Dane wyjściowe:
+- Liczbowy współczynnik BMI (formatowany do 2 miejsc po przecinku).
+- Słowna interpretacja (Niedowaga, Waga prawidłowa, Nadwaga, Otyłość).
+
+---
+
+## 🛡️ Obsługa Błędów
+
 Program został zabezpieczony przed błędnymi danymi wprowadzonymi przez użytkownika:
 
-Błąd twardy (NumberFormatException): Przechwytywany przez blok try-catch. Jeśli użytkownik wpisze litery zamiast liczb, program wyświetla okno dialogowe z ostrzeżeniem zamiast ulec awarii.
-Błąd miękki (Walidacja logiczna): Instrukcja if sprawdza, czy wprowadzone liczby są większe od zera. Zapobiega to m.in. błędom dzielenia przez zero.
-📸 Przebieg działania (Zrzuty ekranu)
-Scenariusz	Opis	Zrzut ekranu
-Prawidłowe obliczenia	Użytkownik podał poprawne dane (np. 80kg, 1.80m).	Prawidłowy wynik
-Błąd twardy	Wpisanie znaków nienumerycznych (tekstu).	Błąd liter
-Błąd miękki	Wpisanie wartości nielogicznych (np. wzrost 0).	Błąd zera
-💻 Kod źródłowy
+1.  **Błąd twardy (NumberFormatException):** Przechwytywany przez blok `try-catch`. Jeśli użytkownik wpisze litery zamiast liczb, program wyświetla okno dialogowe z ostrzeżeniem zamiast ulec awarii.
+2.  **Błąd miękki (Walidacja logiczna):** Instrukcja `if` sprawdza, czy wprowadzone liczby są większe od zera. Zapobiega to m.in. błędom dzielenia przez zero.
+
+---
+
+## 📸 Przebieg działania (Zrzuty ekranu)
+
+| Scenariusz | Opis | Zrzut ekranu |
+| :--- | :--- | :--- |
+| **Prawidłowe obliczenia** | Użytkownik podał poprawne dane (np. 80kg, 1.80m). | ![Prawidłowy wynik](sciezka/do/obrazka1.png) |
+| **Błąd twardy** | Wpisanie znaków nienumerycznych (tekstu). | ![Błąd liter](sciezka/do/obrazka2.png) |
+| **Błąd miękki** | Wpisanie wartości nielogicznych (np. wzrost 0). | ![Błąd zera](sciezka/do/obrazka3.png) |
+
+---
+
+## 💻 Kod źródłowy
+
+```java
 import javax.swing.*;
 import java.awt.*;
 
